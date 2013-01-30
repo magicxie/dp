@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <!--<environmentMode>FAST_ASSERT</environmentMode>-->
+  <solutionClass>domain.CurriculumCourseSchedule</solutionClass>
+  <planningEntityClass>domains.Lecture</planningEntityClass>
+
+  <scoreDirectorFactory>
+    <scoreDefinitionType>HARD_AND_SOFT</scoreDefinitionType>
+    <scoreDrl>rules/curriculumCourseScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+
+  <termination>
+    <maximumSecondsSpend>429</maximumSecondsSpend>
+  </termination>
+  <constructionHeuristic>
+    <constructionHeuristicType>BEST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>
+  <localSearch>
+    <unionMoveSelector>
+      <moveListFactory>
+        <cacheType>PHASE</cacheType>
+        <selectionOrder>SHUFFLED</selectionOrder>
+        <moveListFactoryClass>move.LectureSwapMoveFactory</moveListFactoryClass>
+      </moveListFactory>
+    </unionMoveSelector>
+    <acceptor>
+      <planningEntityTabuSize>10</planningEntityTabuSize>
+    </acceptor>
+    <forager>
+      <minimalAcceptedSelection>900</minimalAcceptedSelection><!-- TODO tweak me -->
+    </forager>
+  </localSearch>
+</solver>
