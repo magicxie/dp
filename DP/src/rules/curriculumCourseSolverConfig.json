@@ -1,0 +1,37 @@
+{
+ 	"solutionClass" : "domains.CurriculumCourseSchedule"
+	,"planningEntityClassSet" : ["domains.Lecture"]
+	,"scoreDirectorFactoryConfig" : 
+ 	{
+ 		"scoreDefinitionType" : "HARD_AND_SOFT"
+ 	 	,"scoreDrlList" : ["rules/curriculumCourseScoreRules.drl"]
+ 	}
+	,"terminationConfig" : 
+	{
+	 	"maximumSecondsSpend" : "429"
+	}
+	,"localSearch" : 
+	{
+		"unionMoveSelector" : 
+		{
+			"moveListFactory" : 
+			{
+				"cacheType" : "PHASE"
+				,"selectionOrder" : "SHUFFLED"
+				,"moveListFactoryClass" : "move.LectureSwapMoveFactory"
+			}
+		}
+		,{
+			"acceptor" : 
+			{
+				"planningEntityTabuSize" : "10"
+			}
+		}
+		,{
+			"forager" : 
+			{
+				"minimalAcceptedSelection" : "900"
+			}
+		}
+	}
+}

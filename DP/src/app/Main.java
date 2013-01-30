@@ -1,16 +1,17 @@
 package app;
 
-import java.io.File;
+import org.drools.planner.config.SolverFactory;
+import org.drools.planner.config.XmlSolverFactory;
 
-import org.drools.planner.benchmark.core.XStreamProblemIO;
-import org.drools.planner.core.solution.ProblemIO;
-
-import domains.CurriculumCourseSchedule;
+import factory.JsonSolverFactory;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ProblemIO io = new XStreamProblemIO(CurriculumCourseSchedule.class);
-		io.read(new File(Main.class.getResource("../rules/curriculumCourseSolverConfig.xml").getPath()));
+		String path = Main.class.getResource("../rules/curriculumCourseSolverConfig.xml").getPath();
+//		SolverFactory sf = new JsonSolverFactory(path);
+//		sf.buildSolver();
+		XmlSolverFactory xf = new XmlSolverFactory("/rules/curriculumCourseSolverConfig.xml");
+		xf.buildSolver();
 	}
 }
