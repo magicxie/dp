@@ -1,6 +1,6 @@
 package domains;
 
-public class TimeSlot {
+public class Timeslot {
 
 	private int code;
 	private String name;

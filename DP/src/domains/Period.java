@@ -3,13 +3,13 @@ package domains;
 public class Period {
 
 	private Day day;
-	private TimeSlot timeSlot;
+	private Timeslot timeSlot;
 	
 	public Day getDay() {
 		return day;
 	}
 
-	public TimeSlot getTimeSlot() {
+	public Timeslot getTimeSlot() {
 		return timeSlot;
 	}
 
@@ -17,7 +17,7 @@ public class Period {
 		this.day = day;
 	}
 
-	public void setTimeSlot(TimeSlot timeSlot) {
+	public void setTimeSlot(Timeslot timeSlot) {
 		this.timeSlot = timeSlot;
 	}
 

@@ -6,7 +6,7 @@
 
   <scoreDirectorFactory>
     <scoreDefinitionType>HARD_AND_SOFT</scoreDefinitionType>
-    <scoreDrl>rules/curriculumCourseScoreRules.drl</scoreDrl>
+    <scoreDrl>/rules/curriculumCourseScoreRules.drl</scoreDrl>
   </scoreDirectorFactory>
 
   <termination>

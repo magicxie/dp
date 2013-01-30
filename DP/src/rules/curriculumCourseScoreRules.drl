@@ -22,13 +22,11 @@ import org.drools.planner.core.score.constraint.IntConstraintOccurrence;
 import org.drools.planner.core.score.constraint.ConstraintType;
 
 import domains.Course;
-import domains.Curriculum;
 import domains.CurriculumCourseSchedule;
 import domains.Day;
 import domains.Lecture;
 import domains.Period;
 import domains.Room;
-import domains.Teacher;
 import domains.Timeslot;
 import domains.UnavailablePeriodPenalty;
 
@@ -49,7 +47,6 @@ rule "conflictingLecturesInSamePeriod"
         // Lectures of the same course can also be conflicting
         $rightCourse : Course(id >= $leftCourseId, $rightTeacher : teacher, $rightCurriculumList : curriculumList)
         eval($leftTeacher == $rightTeacher)
-            or exists Curriculum(this memberOf $leftCurriculumList, this memberOf $rightCurriculumList)
 
         $leftLecture : Lecture(course == $leftCourse, $period : period, period != null)
         $rightLecture : Lecture(course == $rightCourse, period == $period, this != $leftLecture)

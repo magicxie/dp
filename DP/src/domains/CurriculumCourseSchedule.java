@@ -3,14 +3,12 @@ package domains;
 import java.util.Collection;
 import java.util.List;
 
+import org.drools.planner.api.domain.solution.PlanningEntityCollectionProperty;
 import org.drools.planner.api.domain.solution.PlanningSolution;
 import org.drools.planner.core.score.buildin.hardandsoft.HardAndSoftScore;
 import org.drools.planner.core.solution.Solution;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 @PlanningSolution
-@XStreamAlias("CurriculumCourseSchedule")
 public class CurriculumCourseSchedule implements Solution<HardAndSoftScore> {
 
 	@Override
@@ -30,11 +28,19 @@ public class CurriculumCourseSchedule implements Solution<HardAndSoftScore> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@PlanningEntityCollectionProperty
 	public List<Lecture> getLectureList() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
+	public List<Room> getRoomList(){
+		return null;
+	}
+	
+	public List<Period> getPeriodList(){
+		return null;
+	}
 
 }

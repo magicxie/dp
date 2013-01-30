@@ -18,5 +18,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="/drools-planner-benchmark"/>
+	<classpathentry kind="con" path="DROOLS/Drools"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

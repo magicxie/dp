@@ -1,6 +1,6 @@
 package domains;
 
-public class UnavailableLecturePeriod {
+public class UnavailablePeriodPenalty {
 
 	private String teacher;
 	private Period period;
